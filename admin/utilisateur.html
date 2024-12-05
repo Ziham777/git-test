@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Directeur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3ecec;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            padding: 20px;
+            top: 0;
+            left: 0;
+        }
+
+        /* Profil dans la sidebar */
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .profile h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Menu de navigation */
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: #ffffff;
+            background-color: #007bff;
+        }
+
+        .menu li a:active {
+            background-color: #0056b3;
+        }
+
+        /* Sous-menu - caché par défaut */
+        .submenu {
+            list-style: none;
+            padding-left: 20px;
+            display: none;
+        }
+
+        .submenu li {
+            margin: 10px 0;
+        }
+
+        .submenu li a {
+            font-size: 14px;
+        }
+
+        /* Afficher le sous-menu lorsqu'on survole l'élément parent */
+        .menu li:hover .submenu {
+            display: block;
+        }
+
+        /* Contenu principal (à droite de la sidebar) */ 
+        .main-content {
+            margin-left: 250px;
+            padding: 50px;
+            width: calc(100% - 250px); /* Ajuste la largeur pour éviter le chevauchement avec la sidebar */
+            height: 100vh; /* Prend la hauteur de la fenêtre */
+            background-image: url('ATI.jpg');
+            background-size: cover; /* Couvre tout l'espace */
+            background-position: center; /* Centre l'image */
+            background-repeat: no-repeat; /* Empêche la répétition de l'image */
+            background-attachment: fixed; /* Fixe l'image lors du défilement */
+            color: #333; /* Pour les textes clairs */
+            display: flex;
+            flex-direction: column; /* Aligne le contenu de manière verticale */
+            justify-content: left; /* Centre le contenu verticalement */
+            
+        }
+
+        /* Titre de la page */
+        .main-content h1 {
+            font-size: 24px;
+            margin-bottom: 0px;
+            border-radius: 8%;
+        }
+
+        .main-content p {
+            font-size: 16px;
+            color: #0a0303;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="icon_profil.svg" alt="Avatar">
+            <h3>Directeur</h3>
+        </div>
+        <ul class="menu">
+            <li><a href="accueiladmin.html">Accueil</a></li>
+            <li>
+                <a href="#">Ajouter</a>
+                <!-- Sous-menu -->
+                <ul class="submenu">
+                    <li><a href="Candidature.html">Candidature</a></li>
+                    <li><a href="Entreprise.html">Entreprise</a></li>
+                    <li><a href="Offre.html">Offre</a></li>
+                    <li><a href="Inscription.html">candidat</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Modifier</a>
+                <ul class="submenu">
+                    <li><a href="Modifier_Candidature.html">Candidature</a></li>
+                    <li><a href="Modifier_Entreprise.html">Entreprise</a></li>
+                    <li><a href="Modifier_Offre.html">Offre</a></li>
+                    <li><a href="Modifier_Inscription.html">candidat</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Supprimer</a>
+                <ul class="submenu">
+                    <li><a href="Supprimer_candidature.html">Candidature</a></li>
+                    <li><a href="Supprimer_Entreprise.html">Entreprise</a></li>
+                    <li><a href="Supprimer_Offre.html">Offre</a></li>
+                    <li><a href="Supprimer_Inscription.html">candidat</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1>Bienvenue, Directeur</h1>
+        <p>Vous pouvez gérer les candidatures, entreprises et offres de manière efficace et organisée.</p>
+    </div>
+</body>
+
+</html>

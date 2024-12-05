@@ -1,0 +1,23 @@
+center{
+    margin-top: 50px;
+}
+.util{
+    margin-top: 200px;
+    margin-left: 300px;
+}
+a{
+    background-color: #28a745;
+    color: rgb(44, 17, 75);
+    padding: 2rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 350px;
+}
+
+a:hover {
+    background-color: #218838;
+    transform: translate(10px, 10px);
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une Nouvelle Entreprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="user.png" alt="Avatar">
+                <h3>Directeur</h3>
+            </div>
+            <ul class="menu">
+                <li><a href="acceuil_admist.html">Accueil</a></li>
+                <li>
+                    <a href="#" class="menu-item">Ajouter</a>
+                    <!-- Sous-menu -->
+                    <ul class="submenu">
+                        <li><a href="candidature.html">Candidature</a></li>
+                        <li><a href="Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Modifier</a>
+                    <ul class="submenu">
+                        <li><a href="Modifier_candidature.html">Candidature</a></li>
+                        <li><a href="Modifier_Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Supprimer</a>
+                    <ul class="submenu">
+                        <li><a href="Supprimer_candidature.html">Candidature</a></li>
+                        <li><a href="Supprimer_Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <h1>Ajouter une Nouvelle Entreprise</h1>
+            <form action="entreprise.php" method="post">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" placeholder="ALI ABDI" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail :</label>
+                    <input type="email" id="email" name="email" placeholder="ALIABDI@GMAIL.COM" required>
+                </div>
+                <div class="form-group">
+                    <label for="Adress">Adresse :</label>
+                    <input type="text" id="Adress" name="Adress" placeholder="PK12" required>
+                </div>
+                <div class="form-group">
+                    <label for="secteur">Secteur :</label>
+                    <input type="text" id="secteur" name="secteur" required>
+                </div>
+                <div class="form-group">
+                    <label for="motpasse">Mot de Passe :</label>
+                    <input type="password" id="motpasse" name="motpasse" placeholder="********" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Fonction pour gérer l'affichage des sous-menus
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault(); // Empêche le comportement par défaut du lien
+                const submenu = this.nextElementSibling; // Sélectionne le sous-menu associé
+                if (submenu && submenu.classList.contains('submenu')) {
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

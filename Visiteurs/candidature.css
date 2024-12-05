@@ -1,0 +1,183 @@
+
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles globaux */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+
+
+/* Header */
+header#haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: white;
+}
+
+header .logo img {
+  max-width: 120px;
+}
+
+header .nav-links a {
+  margin-left: 1.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+header .nav-links a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+form { 
+    
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    width: 40%;
+    max-width: 90%;
+    align-items: center;
+    padding-top: 350px;
+    padding-bottom: -10px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+
+form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+form { 
+    
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    width: 40%;
+    max-width: 90%;
+    align-items: center;
+    padding-top: 350px;
+    padding-bottom: -10px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Footer */
+
+  footer {
+    text-align: center;
+    padding: 5px;
+    background-color: gray;
+    color: black;
+  
+    margin-top: 900px;
+  }
+  
+
+
+/* Pied de page */
+
+
+
+
+
+

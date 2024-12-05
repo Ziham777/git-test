@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un nouvel enseignant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter un nouveau enseignant</h1>
+        <form>
+            <label for="numero">Numéro :</label>
+            <input type="text" id="numero" placeholder="EXEMPLE : 024321">
+
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" placeholder="ALI ABDI">
+
+            <label for="sexe">Sexe :</label>
+            <select id="sexe">
+                <option>Masculin</option>
+                <option>Féminin</option>
+            </select>
+
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" placeholder="ALIABDI@GMAIL.COM">
+
+            <label for="tel-mobile">Tel Mobile :</label>
+            <input type="tel" id="tel-mobile" placeholder="77 12 34 56">
+
+            <label for="tel-fixe">Tel Fixe :</label>
+            <input type="tel" id="tel-fixe" placeholder="21 98 34 56">
+
+            <label for="adresse">Adresse :</label>
+            <input type="text" id="adresse" placeholder="CITE WADAJIR 1 LOT 105" class="full-width">
+
+            <label for="grade">Grade :</label>
+            <input type="text" id="grade" placeholder="MAITRE DE CONFERENCE">
+
+            <button type="submit" class="btn-submit">AJOUTER</button>
+        </form>
+    </div>
+</body>
+</html>

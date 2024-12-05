@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><h5>Menu Directeur</h5></title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="icon_profil.svg" alt="Avatar">
+            <h3>Directeur</h3>
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="accueiladmin.html"><b>Accueil</b></a>
+            </li>
+            <li>
+                <a href="dashboard.php"><b>Tableau de bord</b></a>
+            </li>
+            <li>
+                <a href="utilisateur.html"><b>Gestion d'utilisateur</b></a>
+            </li>
+            <li>
+                <a href="deconnection.php"><b>Déconnexion</b></a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<main class="main-content">
+    <section id="dashboard" class="section">
+        
+    </section>
+</main>
+</div>
+    
+
+    <script>
+    
+    ('DOMContentLoaded', function () {
+        // Sélectionner le lien de déconnexion
+        const logoutItem = document.querySelector('.menu li:last-child a');
+    
+        if (logoutItem) {
+            logoutItem.addEventListener('click', function (event) {
+                event.preventDefault(); // Empêcher le comportement par défaut
+
+                // Ajouter une confirmation avant la déconnexion
+                if (confirm('Voulez-vous vraiment vous déconnecter ?')) {
+                    // Rediriger vers la page de connexion
+                    window.location.href = 'Accueil2.html';
+                }
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>

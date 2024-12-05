@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Directeur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3ecec;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            padding: 20px;
+            top: 0;
+            left: 0;
+        }
+
+        /* Profil dans la sidebar */
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .profile h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Menu de navigation */
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li a:hover {
+            color: #007bff;
+        }
+
+        .menu li a:after {
+            content: "";
+            font-size: 12px;
+            margin-left: auto;
+        }
+
+        /* Sous-menu - caché par défaut */
+        .submenu {
+            list-style: none;
+            padding-left: 20px;
+            display: none;
+        }
+
+        .submenu li {
+            margin: 10px 0;
+        }
+
+        .submenu li a {
+            font-size: 14px;
+        }
+
+        /* Afficher le sous-menu lorsqu'on survole l'élément parent */
+        .menu li:hover .submenu {
+            display: block;
+        }
+
+        /* Contenu principal (à droite de la sidebar) */
+        .main-content {
+            margin-left: 250px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        /* Titre de la page */
+        .main-content h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 16px;
+            color: #eeeeee;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="user.png" alt="Avatar">
+            <h3>Directeur</h3>
+        </div>
+        <ul class="menu">
+            <li><a href="acceuil admist.html">Accueil</a></li>
+            <li><a href="dashboard.php">Tableau de bord</a></li>
+            <li>
+                <a href="#">Ajouter</a>
+                <!-- Sous-menu -->
+                <ul class="submenu">
+                    <li><a href="Candidature.html">Candidature</a></li>
+                    <li><a href="Entreprise.html">Entreprise</a></li>
+                </ul>
+            <li><a href="#">Modifier</a>
+                <ul class="submenu">
+                    <li><a href="Modifier_Candidature.html">Candidature</a></li>
+                    <li><a href="Modifier_Entreprise.html">Entreprise</a></li>
+                </ul>
+
+            <li><a href="#">Supprimer</a>
+                <ul class="submenu">
+                    <li><a href="Supprimer_candidature.html">Candidature</a></li>
+                    <li><a href="Supprimer_Entreprise.html">Entreprise</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

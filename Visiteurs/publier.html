@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier</title>
+    <link rel="stylesheet" href="publier.css">
+</head>
+<body>
+    <div class="pub">
+        <h1>Publier les offres</h1>
+        <form method="post"action="publier.php">
+            <label for="titre">titre d'emploi</label>
+            <input type="text" id="titre" name="titre" placeholder="titre" required>
+            <label for="description">description d'emploi</label>
+            <textarea name="description" id="description"></textarea>
+            <label for="salaire">salaire</label>
+            <input type="text" id="salaire" name="salaire" placeholder="salaire" required>
+            <label for="entreprise">entreprise</label>
+            <input type="text" id="entreprise" name="entreprise" placeholder="nom de l'entreprise" required>
+            <label for="secteur">Secteur</label>
+            <input type="text" id="secteur" name="secteur" placeholder="votre secteur" required>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" placeholder="ville" required>
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" placeholder="adresse" required>
+            <label for="tel">Telephone</label>
+            <input type="int" id="tel" name="tel" placeholder="telephone" required>
+            <label for="date">date debut</label>
+            <input type="date" name="date">
+            <label for="date">date fin</label>
+            <input type="date" name="dates">
+            <button type="submit" >Publier</button>
+        </form>
+        
+       
+    </div>
+</body>
+</html>

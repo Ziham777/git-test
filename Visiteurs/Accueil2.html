@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Site Demande d'Emploi</title>
+    <link rel="stylesheet" href="accueil.css">
+    
+</head>
+<body>
+    <!-- Header avec navigation -->
+    
+            <header id="haut">
+                <div class="logo">
+                    <a href="Accueil2.html"> <img src="logo.png" Alter="Emploi" ></a>
+                </div>
+                <nav class="nav-links">
+                    <a href="test.html">Liste</a>
+                    <a href="offre.php">Offres</a>
+                    <a href="Connexion.html">Connexion</a>
+                    <a href="A Propos.html">A Propos</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="Connexion.html" >Publier</a>
+                     
+                </nav>
+        </div>
+    </header>
+
+    <!-- Section principale -->
+    <section class="hero1">
+        <div class="hero-text1">
+            <h2>Bienvenue sur notre site d'emploi.</h2>
+            <p>
+                Trouvez l'opportunité qui vous correspond ! <br>
+                Simplifiez votre recherche d'emploi grâce à notre plateforme en ligne.<br>
+                Des offres adaptées à votre profil, des candidatures en un clic, <br>
+                et un pas de plus vers votre carrière idéale.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section principale (Hero) -->
+    <section class="hero">
+    <div class="container">
+        <h1>Le meilleur endroit pour trouver ou publier des offres d'emploi</h1>
+        <p>Découvrez des milliers d'opportunités adaptées à vos compétences et vos ambitions.</p>
+        <form action="offre.php" method="GET">
+            <div class="search-bar">
+                <input type="text" name="keyword" placeholder="Mot-clé (ex. : développeur)" required>
+                <input type="text" name="location" placeholder="Localisation (ex. : Djbouti)" required>
+                <button type="submit">Rechercher</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+    <!-- Section statistiques -->
+    
+    <section class="stats">
+        <div class="stat">
+            <h3><span class="number"  id="offres">0</span></h3>
+            <p>Offres publiées</p>
+        </div>
+        <div class="stat">
+            <h3><span class="number" id="candidats">0</span></h3>
+            <p>Candidats inscrits</p>
+        </div>
+        <div class="stat">
+            <h3><span class="number" id="entreprises">0</span></h3>
+            <p>Entreprises partenaires</p>
+        </div>
+    </section>
+   <!-- Script JavaScript pour récupérer les données -->
+   <script>
+    // Appel vers le backend pour récupérer les données
+    fetch("accueil.php") // Remplacez par l'URL réelle de votre fichier PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erreur réseau : " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Mise à jour des données dans la page
+            document.getElementById("offres").innerText = data.offres + "+";
+            document.getElementById("candidats").innerText = data.candidats + "+";
+            document.getElementById("entreprises").innerText = data.entreprises + "+";
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            document.body.innerText = "Erreur lors du chargement des données : " + error.message;
+        });
+</script>
+   
+ <!-- Section offres récentes -->
+    <section class="recent-jobs">
+        <h2>Offres récentes</h2>
+        <div class="job-list">
+            <div class="job">
+                <h3>Développeur Web</h3>
+                <p>Entreprise ABC - Paris</p>
+                <span>Publié le 23/11/2024</span>
+            </div>
+            <div class="job">
+                <h3>Analyste Financier</h3>
+                <p>Banque XYZ - Lyon</p>
+                <span>Publié le 22/11/2024</span>
+            </div>
+            <div class="job">
+                <h3>Ingénieur DevOps</h3>
+                <p>Tech Solutions - Marseille</p>
+                <span>Publié le 21/11/2024</span>
+            </div>
+        </div>
+        <div class="cta-section">
+            <a href="offre.php" class="cta-btn">Voir toutes les offres</a>
+        </div>
+    </section>
+     <!-- Recuperation  offres récentes -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("recuperation_offre.php")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur réseau :${response.status}');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const jobList = document.querySelector(".job-list");
+                    jobList.innerHTML = ""; // Effacer les anciennes offres
+        
+                    data.forEach(offer => {
+                        const job = document.createElement("div");
+                        job.classList.add("job");
+                        job.innerHTML = `
+                            <h3>${offer.titre}</h3>
+                            <p>${offer.entreprise} - ${offer.ville}</p>
+                            <span>Publié le ${new Date(offer.datedebut).toLocaleDateString()}</span>
+                        `;
+                        jobList.appendChild(job);
+                    });
+                })
+                .catch(error => {
+                    console.error("Erreur :", error);
+                    document.querySelector(".job-list").innerHTML = 'Erreur lors du chargement des offres : ${error.message}';
+                });
+        });
+        </script>
+
+    <!-- Section témoignages -->
+    <section class="testimonials">
+        <h2>Ce que disent nos utilisateurs</h2>
+        <div class="testimonial">
+            <p>"Grâce à ce site, j'ai trouvé mon emploi de rêve en moins d'une semaine !"</p>
+            <span>- Bouh Ali, Djibouti</span>
+        </div>
+        <div class="testimonial">
+            <p>"Une plateforme simple et efficace pour les recruteurs et les candidats."</p>
+            <span>- Farah Osman,Balbala</span>
+        </div>
+        
+        <div class="testimonial">
+            <p>"Je recommande vivement ce site à d'autres chercheurs d'emploi !."</p>
+            <span>- Fatouma Ibrahim,paris</span>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+<footer>
+    <div class="container">
+        <div class="left">
+            <div class="title">Emploi</div>
+                <div class="description">
+                Postuler un travail sans se déplacer à travers le monde, où que vous soyez et n'importe quand.
+                </div>
+        </div>
+                   
+    <div class="center">
+        <div class="quick-links">
+            Accés Rapide
+            <ul>
+                <a href="#haut"><li>Accueil</li></a>
+                <a href="offre.html"><li >Offres</li></a>
+                <a href="A_Propos.html">A Propos</a>
+                <a href="contact.html"><li>Contact</li></a>
+                <a href="publier"><li>Publier</li></a>
+                </ul>
+        </div>
+    </div>
+                   
+     <div class="right">
+         <div class="post-job">
+             <a href="condidature.html">Postuler un travail &#128279;</a>
+             <p>Connectez vous pour bien en avoir travail tout en étant immobile</p>
+        </div>
+      </div>
+    </div>
+    
+    <p>&copy; 2024 Site de Demande d'Emploi. Tous droits réservés.</p>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

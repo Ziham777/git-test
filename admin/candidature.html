@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Nouveau Enseignant</title>
+    <link rel="stylesheet" href="cybe.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="user.png" alt="Avatar">
+                <h3>Directeur</h3>
+            </div>
+            <ul class="menu">
+                <li><a href="acceuil admist.html">Accueil </a></li>
+                <li>
+                    <a href="#" class="menu-item">Ajouter</a>
+                    <ul class="submenu">
+                        <li><a href="candidature.html">Candidature</a></li>
+                        <li><a href="Entreprise.html">Entreprise</a></li>
+                        <li><a href="Inscription.html">Inscription</a></li>
+                        <li><a href="Offre.html">Offre</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Modifier</a>
+                    <ul class="submenu">
+                        <li><a href="Modifier_candidature.html">Candidature</a></li>
+                        <li><a href="Modifier_Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Supprimer</a>
+                    <ul class="submenu">
+                        <li><a href="Supprimer_candidature.html">Candidature</a></li>
+                        <li><a href="Supprimer_Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <h1>Ajouter un nouveau candidature</h1>
+            <form action="candidature.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" placeholder="ALI ABDI" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="ABDI" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom_offre">Nom de l'offre :</label>
+                    <input type="text" id="nom_offre" name="nom_offre" placeholder="Offre d'emploi" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" name="adresse" placeholder="PK12" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="ALIABDI@GMAIL.COM" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="text" id="telephone" name="telephone" placeholder="Téléphone" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplome">Diplôme :</label>
+                    <select name="diplome" id="diplome" required>
+                        <option value="bac" selected>Bac</option>
+                        <option value="Licence">Licence</option>
+                        <option value="master">Master</option>
+                        <option value="doctora">Doctora</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cv">Télécharger votre CV :</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" required>
+                </div>
+                <div class="form-group">
+                    <label for="lettre">Lettre de Motivation :</label>
+                    <textarea name="lettre" id="lettre" rows="5" cols="40" placeholder="Rédigez votre lettre ici..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date de Candidature :</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour gérer l'affichage des sous-menus
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault(); // Empêche le comportement par défaut du lien
+                const submenu = this.nextElementSibling; // Sélectionne le sous-menu associé
+                if (submenu && submenu.classList.contains('submenu')) {
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

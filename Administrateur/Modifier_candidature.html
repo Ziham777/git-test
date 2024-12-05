@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un Candidat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="user.png" alt="Avatar">
+                <h3>Directeur</h3>
+            </div>
+            <ul class="menu">
+                <li><a href="acceuil_admist.html">Accueil</a></li>
+                <li>
+                    <a href="#" class="menu-item">Ajouter</a>
+                    <ul class="submenu">
+                        <li><a href="candidature.html">Candidature</a></li>
+                        <li><a href="Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Modifier</a>
+                    <ul class="submenu">
+                        <li><a href="Modifier_candidature.html">Candidature</a></li>
+                        <li><a href="Modifier_Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Supprimer</a>
+                    <ul class="submenu">
+                        <li><a href="Supprimer_candidature.html">Candidature</a></li>
+                        <li><a href="Supprimer_Entreprise.html">Entreprise</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <h1>Modifier une Candidature</h1>
+            <form action="modifier_candidat.php" method="post">
+                <div class="form-group">
+                    <label for="numero">Numéro :</label>
+                    <input type="text" id="numero" name="numero" placeholder="EXEMPLE : 024321" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" placeholder="ALI ABDI" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="ABDI" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" name="adresse" placeholder="PK12" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail :</label>
+                    <input type="email" id="email" name="email" placeholder="ALIABDI@GMAIL.COM" required>
+                </div>
+                <div class="form-group">
+                    <label for="diplome">Diplôme :</label>
+                    <select name="diplome" required>
+                        <option value="bac">Bac</option>
+                        <option value="licence">Licence</option>
+                        <option value="master">Master</option>
+                        <option value="doctorat">Doctorat</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const submenu = this.nextElementSibling;
+                if (submenu && submenu.classList.contains('submenu')) {
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
